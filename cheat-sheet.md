@@ -34,3 +34,6 @@
 ```ng g c admin/add-audiobook```
 ```ng g c admin/edit-page```
 14. Add routers in admin.module.ts
+15. Add preloading strategy - https://web.dev/route-preloading-in-angular/
+    * in app-routing.module.ts changes 
+    ```imports: [RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules})],```
