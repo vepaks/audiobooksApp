@@ -12,10 +12,16 @@ const routes: Routes = [
     children: [
       // Правим редирект към home page когато няма път в URL адреса
       //  pathMatch: 'full' - ще се редиректне само когато няма път в URL адреса
-      { path: '', redirectTo: '/', pathMatch: 'full'},
+      { path: '', redirectTo: '/', pathMatch: 'full' },
       { path: '', component: HomePageComponent },
       { path: 'audiobook/:id', component: AudiobookPageComponent },
     ],
+  },
+  {
+    path: 'admin',
+    loadChildren: () => {
+      return import('./admin/admin.module').then((m) => m.AdminModule);
+    },
   },
 ];
 

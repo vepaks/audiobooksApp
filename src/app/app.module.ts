@@ -12,7 +12,7 @@ import { AudiobookPageComponent } from './audiobook-page/audiobook-page.componen
     AppComponent,
     MainLayoutComponent,
     HomePageComponent,
-    AudiobookPageComponent
+    AudiobookPageComponent,
   ],
   imports: [
     BrowserModule,
