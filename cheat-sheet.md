@@ -29,3 +29,8 @@
 ```ng g c admin/login-page```
 11. Add login page in routes in admin.module.ts
 12. Add router-outlet to admin-layout.component.html
+13. Add pages in admin module
+```ng g c admin/dashboard```
+```ng g c admin/add-audiobook```
+```ng g c admin/edit-page```
+14. Add routers in admin.module.ts
