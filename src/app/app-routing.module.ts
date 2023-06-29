@@ -24,7 +24,7 @@ const routes: Routes = [
       return import('./admin/admin.module').then((m) => m.AdminModule);
     },
   },
-];
+  ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules})],

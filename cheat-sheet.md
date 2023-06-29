@@ -53,4 +53,6 @@ Material Design components for Angular -> https://material.angular.io/guide/gett
 16. Add Material Design components for Angular
     * https://material.angular.io/guide/getting-started
     * ```ng add @angular/material```
-17. 
+17. Add new component for audiobook
+    * ```ng g c shared/components/audiobook```
+18. Add card in audiobook.component.html
