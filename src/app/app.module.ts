@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { MainLayoutComponent } from './shared/components/main-layout/main-layout.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AudiobookPageComponent } from './audiobook-page/audiobook-page.component';
+import {MatButtonModule} from "@angular/material/button";
+import { AudiobookComponent } from './shared/components/audiobook/audiobook.component';
 
 @NgModule({
   declarations: [
@@ -13,12 +15,10 @@ import { AudiobookPageComponent } from './audiobook-page/audiobook-page.componen
     MainLayoutComponent,
     HomePageComponent,
     AudiobookPageComponent,
+    AudiobookComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, MatButtonModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

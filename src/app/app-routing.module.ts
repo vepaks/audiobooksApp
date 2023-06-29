@@ -7,6 +7,7 @@ import { AudiobookPageComponent } from './audiobook-page/audiobook-page.componen
 const routes: Routes = [
   {
     // path: 'path', component: MainLayoutComponent
+    // Зарежда MainLayoutComponent и в него зарежда останалите компоненти спрямо path-а
     path: '',
     component: MainLayoutComponent,
     children: [

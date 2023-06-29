@@ -1,5 +1,18 @@
 # audioBooks App
 
+**i`m using this cheat sheet for create this app**
+
+Folders-by-feature structure -> https://angular.io/guide/styleguide#folders-by-feature-structure
+
+Using SCSS -> https://angular.io/guide/styleguide#using-scss-style-sheets
+
+Lazy loading NgModules -> https://angular.io/guide/lazy-loading-ngmodules
+
+Preloading NgModules -> https://web.dev/route-preloading-in-angular/
+
+Material Design components for Angular -> https://material.angular.io/guide/getting-started
+
+### Start project
 1. Init new project
 ``` ng n audioBooks --routing --style=scss --prefix=ab ```
 2. Add manin layout
@@ -37,3 +50,7 @@
 15. Add preloading strategy - https://web.dev/route-preloading-in-angular/
     * in app-routing.module.ts changes 
     ```imports: [RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules})],```
+16. Add Material Design components for Angular
+    * https://material.angular.io/guide/getting-started
+    * ```ng add @angular/material```
+17. 
