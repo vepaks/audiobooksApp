@@ -2,12 +2,12 @@
   <h1> audiobook App</h1>
 </div>
 
-<ul>
-  <li><a routerLink="/" data-title="Home">Home</a></li>
-  <li><a routerLink="users/login" data-title="Login">Login</a></li>
-  <!--  <li><a routerLink="users/register" data-title="Register">Register</a></li>-->
-  <li><a routerLink="audiobooks/add" data-title="Add-book">Add book</a></li>
-</ul>
+<div class="nav">
+  <a class="menu-link" mat-raised-button routerLink=".">Home</a>
+  <a class="menu-link" mat-raised-button routerLink=".">Register</a>
+  <a class="menu-link" mat-raised-button routerLink=".">Login</a>
+  <a class="menu-link" mat-raised-button routerLink=".">Logout</a>
+</div>
 
 <div class="container">
   <router-outlet></router-outlet>
