@@ -56,3 +56,5 @@ Material Design components for Angular -> https://material.angular.io/guide/gett
 17. Add new component for audiobook
     * ```ng g c shared/components/audiobook```
 18. Add card in audiobook.component.html
+19. Add style for an admin panel
+20. Add logout() method in admin-layout.component.ts

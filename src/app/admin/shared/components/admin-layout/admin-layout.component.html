@@ -1,2 +1,21 @@
-<p>admin-layout works!</p>
-<router-outlet></router-outlet>
+<div class="container">
+  <h1 routerLink="/"> audiobook App</h1>
+</div>
+
+
+<div class="nav">
+  <a routerLinkActive="routerLinkActive"  class="menu-link" mat-raised-button [routerLink]="['/admin', 'dashboard']"
+    >Admin</a
+  >
+  <a class="menu-link" mat-raised-button [routerLink]="['/admin', 'add']"
+    >Add audiobook</a
+  >
+  <a class="menu-link" color="warn" mat-raised-button href="#" (click)="logout($event)"
+    >Logout</a
+  >
+</div>
+
+<div class="container">
+  <router-outlet></router-outlet>
+
+</div>

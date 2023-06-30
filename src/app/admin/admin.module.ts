@@ -6,6 +6,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
 import { AddAudiobookComponent } from './add-audiobook/add-audiobook.component';
 import { EditPageComponent } from './edit-page/edit-page.component';
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -29,13 +30,14 @@ import { EditPageComponent } from './edit-page/edit-page.component';
             pathMatch: 'full',
           },
           //path: localhost:4200/admin/
-          { path: 'login', component: LoginPageComponent },
-          { path: 'dashboard', component: DashboardPageComponent },
-          { path: 'add', component: AddAudiobookComponent },
-          { path: 'audiobook/:id/edit', component: EditPageComponent },
+          {path: 'login', component: LoginPageComponent},
+          {path: 'dashboard', component: DashboardPageComponent},
+          {path: 'add', component: AddAudiobookComponent},
+          {path: 'audiobook/:id/edit', component: EditPageComponent},
         ],
       },
     ]),
+    MatButtonModule,
   ],
   exports: [RouterModule],
 })
