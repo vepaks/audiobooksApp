@@ -6,7 +6,8 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
 import { AddAudiobookComponent } from './add-audiobook/add-audiobook.component';
 import { EditPageComponent } from './edit-page/edit-page.component';
-import {MatButtonModule} from "@angular/material/button";
+import { MatButtonModule } from '@angular/material/button';
+import { RegisterPageComponent } from './register-page/register-page.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import {MatButtonModule} from "@angular/material/button";
     DashboardPageComponent,
     AddAudiobookComponent,
     EditPageComponent,
+    RegisterPageComponent,
   ],
   imports: [
     CommonModule,
@@ -30,10 +32,11 @@ import {MatButtonModule} from "@angular/material/button";
             pathMatch: 'full',
           },
           //path: localhost:4200/admin/
-          {path: 'login', component: LoginPageComponent},
-          {path: 'dashboard', component: DashboardPageComponent},
-          {path: 'add', component: AddAudiobookComponent},
-          {path: 'audiobook/:id/edit', component: EditPageComponent},
+          { path: 'login', component: LoginPageComponent },
+          { path: 'dashboard', component: DashboardPageComponent },
+          { path: 'add', component: AddAudiobookComponent },
+          { path: 'audiobook/:id/edit', component: EditPageComponent },
+          { path: 'register', component: RegisterPageComponent },
         ],
       },
     ]),

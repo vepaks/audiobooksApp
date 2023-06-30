@@ -58,3 +58,4 @@ Material Design components for Angular -> https://material.angular.io/guide/gett
 18. Add card in audiobook.component.html
 19. Add style for an admin panel
 20. Add logout() method in admin-layout.component.ts
+21. Add register page

@@ -3,10 +3,9 @@
 </div>
 
 <div class="nav">
-  <a class="menu-link" mat-raised-button routerLink=".">Home</a>
-  <a class="menu-link" mat-raised-button routerLink=".">Register</a>
-  <a class="menu-link" mat-raised-button routerLink=".">Login</a>
-  <a class="menu-link" mat-raised-button routerLink=".">Logout</a>
+  <a class="menu-link"  mat-raised-button [routerLink]="['/']">Home</a>
+  <a class="menu-link" mat-raised-button [routerLink]="['/admin', 'register']">Register</a>
+  <a class="menu-link" mat-raised-button [routerLink]="['/admin', 'login']">Login</a>
 </div>
 
 <div class="container">
