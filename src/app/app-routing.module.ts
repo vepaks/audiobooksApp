@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import {PreloadAllModules, RouterModule, Routes} from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { MainLayoutComponent } from './shared/components/main-layout/main-layout.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AudiobookPageComponent } from './audiobook-page/audiobook-page.component';
@@ -19,15 +19,20 @@ const routes: Routes = [
     ],
   },
   {
+    // зарежда админ панела
     path: 'admin',
     loadChildren: () => {
-      return import('./admin/admin.module').then((m) => m.AdminModule);
+      return import('./admin/admin.module').then(
+        (loadModule) => loadModule.AdminModule
+      );
     },
   },
-  ];
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules})],
+  imports: [
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}
