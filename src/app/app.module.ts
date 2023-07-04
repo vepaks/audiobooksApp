@@ -6,10 +6,7 @@ import { AppComponent } from './app.component';
 import { MainLayoutComponent } from './shared/components/main-layout/main-layout.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AudiobookPageComponent } from './audiobook-page/audiobook-page.component';
-import {MatButtonModule} from "@angular/material/button";
 import { AudiobookComponent } from './shared/components/audiobook/audiobook.component';
-import {MatCardModule} from "@angular/material/card";
-import {MatTabsModule} from "@angular/material/tabs";
 
 @NgModule({
   declarations: [
@@ -19,7 +16,7 @@ import {MatTabsModule} from "@angular/material/tabs";
     AudiobookPageComponent,
     AudiobookComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, MatButtonModule, MatCardModule, MatTabsModule],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
