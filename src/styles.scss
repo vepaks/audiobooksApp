@@ -1,33 +1,6 @@
-///* You can add global styles to this file, and also import other style files */
-//body {
-//  background-color: whitesmoke;
-//  font-family:  sans-serif;
-//}
-//html {
-//  height: 100%;
-//  perspective: 1000px;
-//  /*transform-style: preserver-3d;*/
-//  font-family: lato, sans-serif;
-//}
-//
-//.container {
-//  max-width: 1100px;
-//  margin: auto;
-//  overflow: hidden;
-//  //padding: 0 2rem;
-//}
-//
-//
-///*Media Query: Tablet or smaller*/
-//@media only screen and (max-width: 1000px) {
-//  body {
-//    margin: 10px;
-//  }
-//  .example-card card {
-//    display: block;
-//    padding: 10px;
-//  }
-//  a:active {
-//    color: red;
-//  }
-//}
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+body {
+  font-family: var(--font-family);
+}
