@@ -8,6 +8,10 @@ import { AddAudiobookComponent } from './add-audiobook/add-audiobook.component';
 import { EditPageComponent } from './edit-page/edit-page.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
+import { ChipsModule } from 'primeng/chips';
 
 @NgModule({
   declarations: [
@@ -43,6 +47,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     NgIf,
+    ButtonModule,
+    CardModule,
+    ChipsModule,
   ],
   exports: [RouterModule, AddAudiobookComponent],
 })
