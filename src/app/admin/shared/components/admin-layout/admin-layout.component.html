@@ -1,2 +1,21 @@
-<h1>Admin layout</h1>
-<router-outlet></router-outlet>
+<nav class="navbar bg-primary">
+  <h1>
+    <a routerLink="/">audiobookApp Admin</a>
+  </h1>
+
+  <ul>
+    <li routerLinkActive="active">
+      <a [routerLink]="['/admin', 'dashboard']">Home</a>
+    </li>
+    <li routerLinkActive="active">
+      <a [routerLink]="['/admin', 'add']">Add new</a>
+    </li>
+    <li>
+      <a href="#" (click)="logout($event)">logout</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

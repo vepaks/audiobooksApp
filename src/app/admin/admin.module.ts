@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule, NgIf } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AdminLayoutComponent } from './shared/components/admin-layout/admin-layout.component';
 import { LoginPageComponent } from './login-page/login-page.component';
@@ -7,11 +7,7 @@ import { DashboardPageComponent } from './dashboard-page/dashboard-page.componen
 import { AddAudiobookComponent } from './add-audiobook/add-audiobook.component';
 import { EditPageComponent } from './edit-page/edit-page.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ButtonModule } from 'primeng/button';
-import { CardModule } from 'primeng/card';
-import { ChipsModule } from 'primeng/chips';
+import { HomeIcon } from 'primeng/icons/home';
 
 @NgModule({
   declarations: [
@@ -44,12 +40,7 @@ import { ChipsModule } from 'primeng/chips';
         ],
       },
     ]),
-    FormsModule,
-    ReactiveFormsModule,
-    NgIf,
-    ButtonModule,
-    CardModule,
-    ChipsModule,
+    HomeIcon,
   ],
   exports: [RouterModule, AddAudiobookComponent],
 })
