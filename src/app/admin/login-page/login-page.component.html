@@ -1,19 +1,52 @@
 <form class="card" [formGroup]="form" (ngSubmit)="submit()">
-  <h2>Влез в Admin panel</h2>
-  <div class="form-control">
+  <h2>Вход в админ панела</h2>
+  <div
+    class="form-control"
+    [ngClass]="{invalid: form.get('email').touched && form.get('email').invalid}"
+  >
     <label for="email">Email:</label>
-    <input id="email" type="email" />
-    <div class="validation"></div>
-    <small>грешка</small>
-  </div>
-  <div class="form-control">
-    <label for="email">Password:</label>
-    <input id="password" type="password" />
-    <div class="validation"></div>
-    <small>грешка</small>
+    <input id="email" type="email" formControlName="email">
+    <!--     Валидация на email-->
+    <div
+      *ngIf="form.get('email').touched && form.get('email').invalid"
+      class="validation"
+    >
+      <small *ngIf="form.get('email').errors.required">
+        Въведете email
+      </small>
+      <small *ngIf="form.get('email').errors.email">
+        Полето email трябва да бъде email
+      </small>
+    </div>
   </div>
 
-  <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
-    Login
-  </button>
+  <div
+    class="form-control"
+    [ngClass]="{invalid: form.get('password').touched && form.get('password').invalid}"
+  >
+    <label for="password">Парола:</label>
+    <input id="password" type="password" formControlName="password">
+<!--     Валидация на паролата-->
+    <div
+      class="validation"
+      *ngIf="form.get('password').touched && form.get('password').invalid"
+    >
+      <small *ngIf="form.get('password').errors.required">
+        Въведете парола.
+      </small>
+      <small *ngIf="form.get('password').errors.minlength">
+        Паролата трябва да бъде повече от
+        {{form.get('password').errors.minlength.requiredLength}}
+        символа. Сега е
+        {{form.get('password').errors.minlength.actualLength}}
+        символа.
+      </small>
+    </div>
+  </div>
+<!-- При грешно въведени данни бутонът не е активен -->
+  <button
+    type="submit"
+    class="btn btn-primary"
+    [disabled]="form.invalid"
+  >Влез</button>
 </form>

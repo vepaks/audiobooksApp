@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { User } from '../../shared/interfaces';
 
 @Component({
   selector: 'app-login-page',
@@ -8,7 +9,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginPageComponent implements OnInit {
   form: FormGroup | any;
+
   constructor() {}
+
   ngOnInit() {
     this.form = new FormGroup({
       email: new FormControl(null, [Validators.required, Validators.email]),
@@ -20,6 +23,12 @@ export class LoginPageComponent implements OnInit {
   }
   submit() {
     if (this.form.invalid) {
+      return;
     }
+    //създаваме променлива с обект - стойностите от формата
+    const user: User = {
+      email: this.form.value.email,
+      password: this.form.value.password,
+    };
   }
 }
