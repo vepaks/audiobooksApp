@@ -7,7 +7,7 @@ import { DashboardPageComponent } from './dashboard-page/dashboard-page.componen
 import { AddAudiobookComponent } from './add-audiobook/add-audiobook.component';
 import { EditPageComponent } from './edit-page/edit-page.component';
 import { RegisterPageComponent } from './register-page/register-page.component';
-import { HomeIcon } from 'primeng/icons/home';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,6 +20,8 @@ import { HomeIcon } from 'primeng/icons/home';
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild([
       {
         path: '',
@@ -40,7 +42,6 @@ import { HomeIcon } from 'primeng/icons/home';
         ],
       },
     ]),
-    HomeIcon,
   ],
   exports: [RouterModule, AddAudiobookComponent],
 })

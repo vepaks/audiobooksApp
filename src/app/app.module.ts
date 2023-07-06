@@ -28,5 +28,6 @@ import { CardModule } from 'primeng/card';
   ],
   providers: [],
   bootstrap: [AppComponent],
+  exports: [AudiobookComponent],
 })
 export class AppModule {}
