@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class LoginPageComponent implements OnInit {
   form: FormGroup | any;
   submitted: boolean = false;
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(public auth: AuthService, private router: Router) {}
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -35,11 +35,17 @@ export class LoginPageComponent implements OnInit {
       email: this.form.value.email,
       password: this.form.value.password,
     };
-    this.auth.login(user).subscribe(() => {
-      this.form.reset();
-      this.router.navigate(['/admin', 'dashboard']);
-      // След приключване на събитието връщаме значението на флага
-      this.submitted = false;
-    });
+    this.auth.login(user).subscribe(
+      () => {
+        this.form.reset();
+        this.router.navigate(['/admin', 'dashboard']);
+        // След приключване на събитието връщаме значението на флага
+        this.submitted = false;
+      },
+      // Ако има грешка също превключва флага.
+      () => {
+        this.submitted = false;
+      }
+    );
   }
 }

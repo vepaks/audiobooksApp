@@ -3,7 +3,8 @@
     <a routerLink="/">audiobookApp Admin</a>
   </h1>
 
-  <ul>
+<!--  Ако има авторизация менюто се показва-->
+  <ul *ngIf="auth.isAuthenticated()">
     <li routerLinkActive="active">
       <a [routerLink]="['/admin', 'dashboard']">Home</a>
     </li>

@@ -20,6 +20,7 @@ exp Firebase token solution: https://stackoverflow.com/questions/69058233/callin
 
 get token problem solution: https://github.com/Microsoft/TypeScript/issues/8322
 
+error Handler: https://stackoverflow.com/questions/60278490/using-catcherror-inside-the-pipe-shows-an-error-at-the-subscribe-variable
 
 ### Start project
 1. Init new project
@@ -77,4 +78,5 @@ get token problem solution: https://github.com/Microsoft/TypeScript/issues/8322
     * register with link: https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[API_KEY]
 27. Add interface in environments folder, best practice - https://seangwright.medium.com/the-best-way-to-use-angulars-environment-files-a0c098551abc
 28. Add login logic and set Token in localStorage
-
+29. Error handler in auth service
+30. *ngIf for menu in admin panel 

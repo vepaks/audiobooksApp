@@ -1,5 +1,12 @@
 <form class="card" [formGroup]="form" (ngSubmit)="submit()">
   <h2>Вход в админ панела</h2>
+
+<!--  създаваме error message за грешката-->
+<!--  използваме async за да хванем стрийма и "as" за да създадем променлива-->
+  <div class="alert alert-danger" *ngIf="auth.error$ | async as error">
+    {{error}}
+  </div>
+
   <div
     class="form-control"
     [ngClass]="{invalid: form.get('email').touched && form.get('email').invalid}"
