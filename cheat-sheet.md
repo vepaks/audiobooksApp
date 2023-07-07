@@ -12,6 +12,15 @@ Preloading NgModules -> https://web.dev/route-preloading-in-angular/
 
 Material Design components for Angular -> https://material.angular.io/guide/getting-started
 
+The best way to use Angular’s environment files: https://seangwright.medium.com/the-best-way-to-use-angulars-environment-files-a0c098551abc
+
+tap operator on RxJs -> https://rxjs.dev/api/operators/tap
+
+exp Firebase token solution: https://stackoverflow.com/questions/69058233/calling-subscribe-after-pipe-not-executing-my-redirection-code 
+
+get token problem solution: https://github.com/Microsoft/TypeScript/issues/8322
+
+
 ### Start project
 1. Init new project
 ``` ng n audioBooks --routing --style=scss --prefix=ab ```
@@ -59,3 +68,13 @@ Material Design components for Angular -> https://material.angular.io/guide/gett
 19. Add style for an admin panel
 20. Add logout() method in admin-layout.component.ts
 21. Add register page
+22. Add form in login page 
+23. Add validations in login form 
+24. Add services and shared module
+25. Add interfaces in shared folder
+26. Add firebase REST to project 
+    * Auth service login with link: https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=[API_KEY]
+    * register with link: https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=[API_KEY]
+27. Add interface in environments folder, best practice - https://seangwright.medium.com/the-best-way-to-use-angulars-environment-files-a0c098551abc
+28. Add login logic and set Token in localStorage
+
