@@ -10,6 +10,7 @@ import { AudiobookComponent } from './shared/components/audiobook/audiobook.comp
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { CardModule } from 'primeng/card';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    SharedModule,
     BrowserAnimationsModule,
     ButtonModule,
     CardModule,
