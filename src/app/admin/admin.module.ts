@@ -12,6 +12,7 @@ import { RegisterPageComponent } from './register-page/register-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './shared/services/auth.service';
 import { SharedModule } from '../shared/shared.module';
+import {AuthGuard} from "./shared/services/auth.guard";
 
 @NgModule({
   declarations: [
@@ -40,15 +41,15 @@ import { SharedModule } from '../shared/shared.module';
           },
           //path: localhost:4200/admin/
           { path: 'login', component: LoginPageComponent },
-          { path: 'dashboard', component: DashboardPageComponent },
-          { path: 'add', component: AddAudiobookComponent },
-          { path: 'audiobook/:id/edit', component: EditPageComponent },
+          { path: 'dashboard', component: DashboardPageComponent, canActivate: [AuthGuard] },
+          { path: 'add', component: AddAudiobookComponent, canActivate: [AuthGuard]  },
+          { path: 'audiobook/:id/edit', component: EditPageComponent , canActivate: [AuthGuard] },
           { path: 'register', component: RegisterPageComponent },
         ],
       },
     ]),
   ],
   exports: [RouterModule, AddAudiobookComponent],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuard],
 })
 export class AdminModule {}
