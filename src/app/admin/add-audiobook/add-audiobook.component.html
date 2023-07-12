@@ -1,1 +1,42 @@
-<p>add-audiobook works!</p>
+<form>
+  <h1>Добави нова аудиокнига</h1>
+
+  <div
+    class="form-control"
+    [ngClass]="{
+      invalid: form.get('title').touched && form.get('title').invalid
+    }"
+  >
+    <label for="title">Заглавие и автор на книгата:</label>
+    <input id="title" type="text" formControlName="title" />
+    <div
+      *ngIf="form.get('title').touched && form.get('title').invalid"
+      class="validation"
+    >
+      <small *ngIf="form.get('title').errors.required"> Въведете email </small>
+    </div>
+  </div>
+
+  <div class="form-control">
+    <label>Анонс на книгата</label>
+  </div>
+
+  <div
+    class="form-control"
+    [ngClass]="{
+      invalid: form.get('narrator').touched && form.get('narrator').invalid
+    }"
+  >
+    <label for="narrator">Четеч:</label>
+    <input id="narrator" type="text" formControlName="narrator" />
+    <div
+      *ngIf="form.get('narrator').touched && form.get('narrator').invalid"
+      class="validation"
+    >
+      <small *ngIf="form.get('narrator').errors.required">
+        Въведете email
+      </small>
+    </div>
+  </div>
+  <button class="btn btn-block btn-dark" type="submit" [disabled]="form.invalid">Добави</button>
+</form>

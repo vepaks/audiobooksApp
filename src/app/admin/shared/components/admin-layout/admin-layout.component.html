@@ -3,20 +3,25 @@
     <a routerLink="/">audiobookApp Admin</a>
   </h1>
 
-<!--  Ако има авторизация менюто се показва-->
+  <ul *ngIf="!auth.isAuthenticated()">
+    <li routerLinkActive="active">
+      <a [routerLink]="['/admin', 'register']">Регистрирай се</a>
+    </li>
+  </ul>
+  <!--  Ако има авторизация менюто се показва-->
   <ul *ngIf="auth.isAuthenticated()">
     <li routerLinkActive="active">
-      <a [routerLink]="['/admin', 'dashboard']">Home</a>
+      <a [routerLink]="['/admin', 'dashboard']">Всички аудиокниги</a>
     </li>
     <li routerLinkActive="active">
-      <a [routerLink]="['/admin', 'add']">Add new</a>
+      <a [routerLink]="['/admin', 'add']">Добави</a>
     </li>
     <li>
-      <a href="#" (click)="logout($event)">logout</a>
+      <a href="#" (click)="logout($event)">Излез</a>
     </li>
   </ul>
 </nav>
 
 <div class="container">
-  <router-outlet/>
+  <router-outlet />
 </div>
