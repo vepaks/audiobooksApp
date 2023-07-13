@@ -1,4 +1,4 @@
-<form>
+<form [formGroup]="form" (ngSubmit)="submit()">
   <h1>Добави нова аудиокнига</h1>
 
   <div
@@ -13,7 +13,7 @@
       *ngIf="form.get('title').touched && form.get('title').invalid"
       class="validation"
     >
-      <small *ngIf="form.get('title').errors.required"> Въведете email </small>
+      <small *ngIf="form.get('title').errors.required"> Въведете заглавие </small>
     </div>
   </div>
 
@@ -35,7 +35,7 @@
       class="validation"
     >
       <small *ngIf="form.get('narrator').errors.required">
-        Въведете email
+        Въведете четеч
       </small>
     </div>
   </div>
