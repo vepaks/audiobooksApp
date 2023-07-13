@@ -9,6 +9,7 @@ import {FormGroup} from "@angular/forms";
 export class AddAudiobookComponent implements OnInit {
 
   form: FormGroup | any;
+  text: any;
 
   ngOnInit(): void {
   }

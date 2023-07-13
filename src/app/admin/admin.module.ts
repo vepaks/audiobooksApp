@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './shared/services/auth.service';
 import { SharedModule } from '../shared/shared.module';
 import {AuthGuard} from "./shared/services/auth.guard";
+import {EditorModule} from "primeng/editor";
 
 @NgModule({
   declarations: [
@@ -41,13 +42,26 @@ import {AuthGuard} from "./shared/services/auth.guard";
           },
           //path: localhost:4200/admin/
           { path: 'login', component: LoginPageComponent },
-          { path: 'dashboard', component: DashboardPageComponent, canActivate: [AuthGuard] },
-          { path: 'add', component: AddAudiobookComponent, canActivate: [AuthGuard]  },
-          { path: 'audiobook/:id/edit', component: EditPageComponent , canActivate: [AuthGuard] },
+          {
+            path: 'dashboard',
+            component: DashboardPageComponent,
+            canActivate: [AuthGuard],
+          },
+          {
+            path: 'add',
+            component: AddAudiobookComponent,
+            canActivate: [AuthGuard],
+          },
+          {
+            path: 'audiobook/:id/edit',
+            component: EditPageComponent,
+            canActivate: [AuthGuard],
+          },
           { path: 'register', component: RegisterPageComponent },
         ],
       },
     ]),
+    EditorModule,
   ],
   exports: [RouterModule, AddAudiobookComponent],
   providers: [AuthService, AuthGuard],
