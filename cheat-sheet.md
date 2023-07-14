@@ -80,3 +80,7 @@ error Handler: https://stackoverflow.com/questions/60278490/using-catcherror-ins
 28. Add login logic and set Token in localStorage
 29. Error handler in auth service
 30. *ngIf for menu in admin panel 
+31. Add footer and header 
+32. Add logic for add-audiobook component
+33. Add ngx-quill -> https://www.npmjs.com/package/ngx-quill 
+34. add quil to add-audiobook.component.html

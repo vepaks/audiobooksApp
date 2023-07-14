@@ -19,9 +19,9 @@
 
   <div class="form-control">
     <label>Анонс на книгата</label>
-  </div>
+    <p-editor formControlName="text" [style]="{ height: '320px' }"></p-editor>
 
-  <p-editor [(ngModel)]="text" [style]="{ height: '320px' }"></p-editor>
+  </div>
   <div
     class="form-control"
     [ngClass]="{

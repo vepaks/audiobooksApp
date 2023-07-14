@@ -6,8 +6,16 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { NgIf } from '@angular/common';
 
 @NgModule({
-  imports: [HttpClientModule, RouterLink, NgIf, RouterLinkActive],
-  exports: [HttpClientModule, HeaderComponent, FooterComponent],
+  imports: [
+    HttpClientModule,
+    RouterLink,
+    NgIf,
+    RouterLinkActive,
+  ],
+  exports: [HttpClientModule,
+    HeaderComponent,
+    FooterComponent,
+  ],
   declarations: [HeaderComponent, FooterComponent],
 })
 export class SharedModule {}
