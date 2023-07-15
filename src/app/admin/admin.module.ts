@@ -13,7 +13,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './shared/services/auth.service';
 import { SharedModule } from '../shared/shared.module';
 import {AuthGuard} from "./shared/services/auth.guard";
-import {EditorModule} from "primeng/editor";
 
 @NgModule({
   declarations: [
@@ -61,7 +60,6 @@ import {EditorModule} from "primeng/editor";
         ],
       },
     ]),
-    EditorModule,
   ],
   exports: [RouterModule, AddAudiobookComponent],
   providers: [AuthService, AuthGuard],

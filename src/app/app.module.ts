@@ -8,8 +8,6 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { AudiobookPageComponent } from './audiobook-page/audiobook-page.component';
 import { AudiobookComponent } from './shared/components/audiobook/audiobook.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ButtonModule } from 'primeng/button';
-import { CardModule } from 'primeng/card';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
@@ -25,8 +23,6 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     SharedModule,
     BrowserAnimationsModule,
-    ButtonModule,
-    CardModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

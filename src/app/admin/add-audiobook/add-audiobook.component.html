@@ -9,18 +9,17 @@
   >
     <label for="title">Заглавие и автор на книгата:</label>
     <input id="title" type="text" formControlName="title" />
-    <div
-      *ngIf="form.get('title').touched && form.get('title').invalid"
-      class="validation"
-    >
-      <small *ngIf="form.get('title').errors.required"> Въведете заглавие </small>
-    </div>
+<!--    <div-->
+<!--      *ngIf="form.get('title').touched && form.get('title').invalid"-->
+<!--      class="validation"-->
+<!--    >-->
+<!--      <small *ngIf="form.get('title').errors.required"> Въведете заглавие </small>-->
+<!--    </div>-->
   </div>
 
   <div class="form-control">
     <label>Анонс на книгата</label>
-    <p-editor formControlName="text" [style]="{ height: '320px' }"></p-editor>
-
+    <input id="text" type="text" formControlName="text" />
   </div>
   <div
     class="form-control"
@@ -30,14 +29,14 @@
   >
     <label for="narrator">Четеч:</label>
     <input id="narrator" type="text" formControlName="narrator" />
-    <div
-      *ngIf="form.get('narrator').touched && form.get('narrator').invalid"
-      class="validation"
-    >
-      <small *ngIf="form.get('narrator').errors.required">
-        Въведете четеч
-      </small>
-    </div>
+<!--    <div-->
+<!--      *ngIf="form.get('narrator').touched && form.get('narrator').invalid"-->
+<!--      class="validation"-->
+<!--    >-->
+<!--      <small *ngIf="form.get('narrator').errors.required">-->
+<!--        Въведете четеч-->
+<!--      </small>-->
+<!--    </div>-->
   </div>
   <button class="btn btn-block btn-dark" type="submit" [disabled]="form.invalid">Добави</button>
 </form>
