@@ -9,7 +9,6 @@ import { Post } from '../../shared/interfaces';
 })
 export class AddAudiobookComponent implements OnInit {
   form: FormGroup | any;
-  text: any;
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -20,16 +19,15 @@ export class AddAudiobookComponent implements OnInit {
   }
 
   submit() {
-    if (this.form.valid) {
+    if (this.form.invalid) {
       return;
     }
    const post: Post = {
       title: this.form.value.title,
-      narrator: this.form.value.narrator,
       text: this.form.value.text,
+      narrator: this.form.value.narrator,
       date: new Date(),
     };
-
     console.log(post)
   }
 }
