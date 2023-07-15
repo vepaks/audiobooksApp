@@ -21,8 +21,11 @@
 
   <div class="form-control">
     <label>Анонс на книгата</label>
-    <input id="text" type="text" formControlName="text" />
+<!--    <input id="text" type="text" formControlName="text" />-->
+    <angular-editor id="text" formControlName="text" ></angular-editor>
+
   </div>
+
 
   <div
     class="form-control"
@@ -42,5 +45,5 @@
     </div>
   </div>
 
-  <button type="submit">Добави</button>
+  <button class="btn btn-dark" type="submit">Добави</button>
 </form>

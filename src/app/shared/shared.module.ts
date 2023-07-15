@@ -4,6 +4,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { NgIf } from '@angular/common';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 
 @NgModule({
   imports: [
@@ -11,10 +12,12 @@ import { NgIf } from '@angular/common';
     RouterLink,
     NgIf,
     RouterLinkActive,
+    AngularEditorModule
   ],
   exports: [HttpClientModule,
     HeaderComponent,
     FooterComponent,
+    AngularEditorModule
   ],
   declarations: [HeaderComponent, FooterComponent],
 })
