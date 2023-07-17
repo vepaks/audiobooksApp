@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Post } from '../../shared/interfaces';
-import {AngularEditorConfig} from "@kolkov/angular-editor";
+import { AudiobooksService } from '../../shared/audiobooks.service';
 
 @Component({
   selector: 'app-add-audiobook',
@@ -10,6 +10,9 @@ import {AngularEditorConfig} from "@kolkov/angular-editor";
 })
 export class AddAudiobookComponent implements OnInit {
   form: FormGroup | any;
+
+  constructor(private audiobooksService: AudiobooksService) {}
+
   ngOnInit(): void {
     this.form = new FormGroup({
       title: new FormControl(null, Validators.required),
@@ -28,6 +31,9 @@ export class AddAudiobookComponent implements OnInit {
       narrator: this.form.value.narrator,
       date: new Date(),
     };
-    console.log(post);
+
+    this.audiobooksService.create(post).subscribe(() => {
+      this.form.reset();
+    });
   }
 }

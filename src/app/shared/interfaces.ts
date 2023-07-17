@@ -18,3 +18,7 @@ export interface Post {
   narrator: string,
   date: Date
 }
+
+export interface FbCreateResponse {
+  name?: string
+}
