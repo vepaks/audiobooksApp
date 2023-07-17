@@ -5,6 +5,7 @@ import { FbCreateResponse, Post } from './interfaces';
 import { environment } from '../../environments/environment';
 import { map } from 'rxjs/operators';
 
+// providedIn: "root" за даможе всички да го виждат
 @Injectable({ providedIn: 'root' })
 export class AudiobooksService {
   constructor(private http: HttpClient) {}

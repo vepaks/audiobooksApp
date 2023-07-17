@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
+import {NgModule, Provider} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HTTP_INTERCEPTORS} from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +10,15 @@ import { AudiobookPageComponent } from './audiobook-page/audiobook-page.componen
 import { AudiobookComponent } from './shared/components/audiobook/audiobook.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
+import {AuthInterceptor} from "./shared/auth.interceptor";
+
+// създаваме отделно обект за Interceptor
+
+const INTERCEPTOR_PROVIDER: Provider = {
+  provide: HTTP_INTERCEPTORS,
+  multi: true,
+  useClass: AuthInterceptor
+}
 
 @NgModule({
   declarations: [
@@ -24,7 +34,7 @@ import { SharedModule } from './shared/shared.module';
     SharedModule,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [INTERCEPTOR_PROVIDER],
   bootstrap: [AppComponent],
   exports: [AudiobookComponent],
 })

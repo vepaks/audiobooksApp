@@ -62,6 +62,6 @@ import {AuthGuard} from "./shared/services/auth.guard";
     ]),
   ],
   exports: [RouterModule, AddAudiobookComponent],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthGuard],
 })
 export class AdminModule {}

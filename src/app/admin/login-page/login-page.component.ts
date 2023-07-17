@@ -27,6 +27,8 @@ export class LoginPageComponent implements OnInit {
       if (params['loginAgain']) {
         // съзадваме съобщение за потребителя
         this.message = 'Моля, въведете данните си';
+      } else if (params['authFailed']) {
+        this.message = "Сесията изтече. Въведете данни отново."
       }
     });
 
