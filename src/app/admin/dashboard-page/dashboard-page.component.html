@@ -1,1 +1,43 @@
-<p>dashboard-page works!</p>
+<div *ngIf="audiobooks.length; else loading">
+
+  <div class="form-control">
+    <input type="text" placeholder="Намери аудиокнига" >
+  </div>
+
+  <table>
+  <thead>
+    <tr>
+      <th>№</th>
+      <th>Заглавие и автор</th>
+      <th>Четец</th>
+      <th>Дата</th>
+      <th>Действие</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let audiobook of audiobooks; let inx = index">
+    <td>{{ inx + 1 }}</td>
+    <td> {{ audiobook.title }}</td>
+    <td> {{ audiobook.narrator }} </td>
+    <td>{{ audiobook.date | date: "medium" }} </td>
+    <td>
+
+<!-- роута започва с /admin     -->
+      <button
+        class="btn btn-link btn-sm"
+        [routerLink]="['/admin', 'audiobook', audiobook.id, 'edit']"
+      >
+      Отвори
+      </button>
+      <a (click)="remove(audiobook.id)">Изтрий</a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</div>
+
+
+<ng-template #loading>
+<!--  <i class="pi pi-spin pi-cog" style="font-size: 8rem"></i>-->
+  <div class=" text-center alert alert-success">Зареждане...</div>
+</ng-template>

@@ -12,6 +12,8 @@ import { RegisterPageComponent } from './register-page/register-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import {AuthGuard} from "./shared/services/auth.guard";
+import {TableModule} from "primeng/table";
+import {ButtonModule} from "primeng/button";
 // import {ButtonModule} from "primeng/button";
 // import { EditorModule } from 'primeng/editor';
 
@@ -64,6 +66,8 @@ import {AuthGuard} from "./shared/services/auth.guard";
         ],
       },
     ]),
+    TableModule,
+    ButtonModule,
   ],
   exports: [RouterModule, AddAudiobookComponent],
   providers: [AuthGuard],

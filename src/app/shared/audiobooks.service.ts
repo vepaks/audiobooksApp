@@ -21,4 +21,19 @@ export class AudiobooksService {
       })
     );
   }
+
+  // Взимаме всички постове от базата данни и ги връщаме като масив от обекти
+  // като във всеки обект добавяме и id-то на поста и дата на поста
+  getAll(): Observable<Post[]> {
+    return this.http.get(`${environment.FbDBUrl}/audiobooks.json`)
+      .pipe(map((response: { [key: string]: any }) => {
+        return Object.keys(response).map((key) => ({
+          ...response[key],
+          id: key,
+          date: new Date(response[key].date),
+        }));
+      })
+    );
+  }
+
 }
