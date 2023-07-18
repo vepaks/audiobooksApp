@@ -5,6 +5,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { NgIf } from '@angular/common';
 import { AngularEditorModule } from '@kolkov/angular-editor';
+// import {QuillModule} from "ngx-quill";
+
 
 @NgModule({
   imports: [
@@ -12,12 +14,15 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
     RouterLink,
     NgIf,
     RouterLinkActive,
-    AngularEditorModule
+    AngularEditorModule,
+    // QuillModule.forRoot(),
   ],
-  exports: [HttpClientModule,
+  exports: [
+    HttpClientModule,
     HeaderComponent,
     FooterComponent,
-    AngularEditorModule
+    AngularEditorModule,
+    // QuillModule,
   ],
   declarations: [HeaderComponent, FooterComponent],
 })
