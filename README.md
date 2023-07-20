@@ -11,7 +11,7 @@ To get started, you will need to have the following installed:
 
 Once you have those installed, you can clone the project from GitHub:
 
-git clone https://github.com/[your-username]/audioBooks.git
+git clone https://github.com/vepaks/audiobooksApp.git
 
 
 Then, install the dependencies:
