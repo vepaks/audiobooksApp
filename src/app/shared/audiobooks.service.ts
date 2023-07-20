@@ -21,7 +21,6 @@ export class AudiobooksService {
       })
     );
   }
-
   // Взимаме всички постове от базата данни и ги връщаме като масив от обекти
   // като във всеки обект добавяме и id-то на поста и дата на поста
   getAll(): Observable<Post[]> {
@@ -36,4 +35,7 @@ export class AudiobooksService {
     );
   }
 
+  remove (id: string): Observable<void> {
+    return this.http.delete<void>(`${environment.FbDBUrl}/audiobooks/${id}.json`)
+  }
 }

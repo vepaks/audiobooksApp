@@ -24,7 +24,14 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
       });
   }
 
-  remove(id?: string) {}
+  //  проверяваме дали има id и ако има го премахваме от DB като използваме филтър
+  remove(id: string | undefined) {
+    if (id !== undefined) {
+      this.audiobooksService.remove(id).subscribe(() => {
+        this.audiobooks = this.audiobooks.filter(audiobook => audiobook.id !== id)
+      });
+    }
+  }
 
   ngOnDestroy() {
     if (this.audiobookSub) {
