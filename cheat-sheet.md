@@ -87,3 +87,4 @@ error Handler: https://stackoverflow.com/questions/60278490/using-catcherror-ins
 35. add audiobooks service, post to DB 
 36. Remove error 401 - interceptors - https://stackoverflow.com/questions/46017245/how-to-handle-unauthorized-requestsstatus-with-401-or-403-with-new-httpclient
 37. Add logic for dashboard component - getAll audiobooks from db
+38. add search in dashboard

@@ -1,7 +1,7 @@
-<div *ngIf="audiobooks.length; else loading">
+<div *ngIf="audiobooks.length; else loading" >
 
   <div class="form-control">
-    <input type="text" placeholder="Намери аудиокнига" >
+    <input type="text" placeholder="Намери аудиокнига"  [(ngModel)]="search">
   </div>
 
   <table>
@@ -15,7 +15,7 @@
     </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let audiobook of audiobooks; let inx = index">
+  <tr *ngFor="let audiobook of audiobooks | searchAudiobooks: search; let inx = index">
     <td>{{ inx + 1 }}</td>
     <td> {{ audiobook.title }}</td>
     <td> {{ audiobook.narrator }} </td>

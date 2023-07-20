@@ -14,6 +14,7 @@ import { SharedModule } from '../shared/shared.module';
 import {AuthGuard} from "./shared/services/auth.guard";
 import {TableModule} from "primeng/table";
 import {ButtonModule} from "primeng/button";
+import {SearchPipe} from "./shared/pipes/search.pipe";
 // import {ButtonModule} from "primeng/button";
 // import { EditorModule } from 'primeng/editor';
 
@@ -26,6 +27,7 @@ import {ButtonModule} from "primeng/button";
     AddAudiobookComponent,
     EditPageComponent,
     RegisterPageComponent,
+    SearchPipe
   ],
   imports: [
     CommonModule,
