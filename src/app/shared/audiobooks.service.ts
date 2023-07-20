@@ -11,8 +11,8 @@ export class AudiobooksService {
   constructor(private http: HttpClient) {}
 
   create(post: Post): Observable<Post> {
-    return this.http.post(`${environment.FbDBUrl}/audiobooks.json`, post).pipe(
-      map((response: FbCreateResponse) => {
+    return this.http.post(`${environment.FbDBUrl}/audiobooks.json`, post)
+      .pipe(map((response: FbCreateResponse) => {
         return {
           ...post,
           id: response.name,
@@ -33,6 +33,18 @@ export class AudiobooksService {
         }));
       })
     );
+  }
+
+  // взимаме данни от сървъра по ID
+  getById(id: string): Observable<Post> {
+    return this.http.get<Post>(`${environment.FbDBUrl}/audiobooks/${id}.json`)
+      .pipe(map((audiobook: Post) => {
+        return {
+          ...audiobook,
+          id,
+          date: new Date(audiobook.date),
+        };
+      }))
   }
 
   remove (id: string): Observable<void> {

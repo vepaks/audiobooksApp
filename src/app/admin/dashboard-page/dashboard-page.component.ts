@@ -11,6 +11,7 @@ import { Subscription } from 'rxjs';
 export class DashboardPageComponent implements OnInit, OnDestroy {
   audiobooks: Post[] = [];
   audiobookSub: Subscription = new Subscription();
+  deleteAudiobookSub: Subscription = new Subscription();
   search: string = '';
   constructor(private audiobooksService: AudiobooksService) {
     this.audiobookSub = new Subscription();
@@ -27,7 +28,7 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
   //  проверяваме дали има id и ако има го премахваме от DB като използваме филтър
   remove(id: string | undefined) {
     if (id !== undefined) {
-      this.audiobooksService.remove(id).subscribe(() => {
+     this.deleteAudiobookSub = this.audiobooksService.remove(id).subscribe(() => {
         this.audiobooks = this.audiobooks.filter(audiobook => audiobook.id !== id)
       });
     }
@@ -37,5 +38,9 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
     if (this.audiobookSub) {
       this.audiobookSub.unsubscribe();
     }
+    if (this.deleteAudiobookSub) {
+      this.deleteAudiobookSub.unsubscribe();
+    }
+
   }
 }

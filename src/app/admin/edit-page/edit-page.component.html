@@ -1,1 +1,57 @@
-<p>edit-page works!</p>
+<div *ngIf="form; else loading">
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div
+      class="form-control"
+      [ngClass]="{
+        invalid: form.get('title').touched && form.get('title').invalid
+      }"
+    >
+      <label for="title">Заглавие и автор на книгата:</label>
+      <input id="title" type="text" formControlName="title" />
+      <div
+        *ngIf="form.get('title').touched && form.get('title').invalid"
+        class="validation"
+      >
+        <small *ngIf="form.get('title').errors.required">
+          Въведете заглавие
+        </small>
+      </div>
+    </div>
+
+    <div class="form-control">
+      <label>Анонс на книгата</label>
+      <angular-editor id="text" formControlName="text"></angular-editor>
+      <!--    <p-editor formControlName="text" [style]="{ height: '320px' }"></p-editor>-->
+    </div>
+
+    <div
+      class="form-control"
+      [ngClass]="{
+        invalid: form.get('narrator').touched && form.get('narrator').invalid
+      }"
+    >
+      <label for="narrator">Четеч:</label>
+      <input id="narrator" type="text" formControlName="narrator" />
+      <div
+        *ngIf="form.get('narrator').touched && form.get('narrator').invalid"
+        class="validation"
+      >
+        <small *ngIf="form.get('narrator').errors.required">
+          Въведете четеч
+        </small>
+      </div>
+    </div>
+    <button
+      class="btn btn-block btn-dark"
+      type="submit"
+      [disabled]="form.invalid"
+    >
+      Обнови
+    </button>
+  </form>
+</div>
+
+<ng-template #loading>
+  <!--  <i class="pi pi-spin pi-cog" style="font-size: 8rem"></i>-->
+  <p class="text-center">Зареждане...</p>
+</ng-template>

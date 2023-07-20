@@ -88,3 +88,7 @@ error Handler: https://stackoverflow.com/questions/60278490/using-catcherror-ins
 36. Remove error 401 - interceptors - https://stackoverflow.com/questions/46017245/how-to-handle-unauthorized-requestsstatus-with-401-or-403-with-new-httpclient
 37. Add logic for dashboard component - getAll audiobooks from db
 38. add search in dashboard
+39. Add remove posts in dashboard page
+40. edit page
+    * switchMap operator - https://www.learnrxjs.io/learn-rxjs/operators/transformation/switchmap
+41. Add edit page template and logic for getById method
