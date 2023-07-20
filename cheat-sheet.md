@@ -92,3 +92,8 @@ error Handler: https://stackoverflow.com/questions/60278490/using-catcherror-ins
 40. edit page
     * switchMap operator - https://www.learnrxjs.io/learn-rxjs/operators/transformation/switchmap
 41. Add edit page template and logic for getById method
+42. Add update method in audiobooks service
+43. Add logic for edit page
+44. Add logic for Home page
+45. Add logic for audiobook page
+46. Аdd logic for register page

@@ -50,4 +50,7 @@ export class AudiobooksService {
   remove (id: string): Observable<void> {
     return this.http.delete<void>(`${environment.FbDBUrl}/audiobooks/${id}.json`)
   }
+  update(audiobook: Post): Observable<Post> {
+    return this.http.patch<Post>(`${environment.FbDBUrl}/audiobooks/${audiobook.id}.json`, audiobook);
+  }
 }

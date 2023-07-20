@@ -1,27 +1,50 @@
-# NewApp
+# audioBooks App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.1.
+This project is an Angular app that allows users to browse and listen to audiobooks.
 
-## Development server
+## Getting Started
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+To get started, you will need to have the following installed:
 
-## Code scaffolding
+- Node.js
+- npm
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Once you have those installed, you can clone the project from GitHub:
 
-## Build
+git clone https://github.com/[your-username]/audioBooks.git
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+Then, install the dependencies:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+npm install
 
-## Running end-to-end tests
+Finally, run the development server:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+The app will be running on [http://localhost:4200](http://localhost:4200).
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Features
+
+The audioBooks app has the following features:
+
+- Browse a list of audiobooks
+- Play audiobooks
+- Add audiobooks to your library
+- Remove audiobooks from your library
+
+## To-Do
+
+The following are some of the things that I plan to add to the audioBooks app in the future:
+
+- The ability to search for audiobooks
+- The ability to rate audiobooks
+- The ability to leave reviews for audiobooks
+
+## Contributing
+
+If you would like to contribute to the audioBooks app, please feel free to fork the project and submit a pull request.
+
+## License
+
+The audioBooks app is licensed under the MIT License.
+
