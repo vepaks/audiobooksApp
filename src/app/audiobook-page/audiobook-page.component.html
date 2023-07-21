@@ -1,20 +1,20 @@
-<div class="post">
-  <div class="header">
-    <h1>Post title</h1>
+<div *ngIf="audiobook$ | async as audiobook; else loading" >
+  <div class="post">
+    <div class="header">
+      <h1>{{audiobook.title}}</h1>
 
-    <button routerLink="/" class="btn btn-link">Назад</button>
-  </div>
+      <button routerLink="/" class="btn btn-link">Назад</button>
+    </div>
 
-  <div class="info">
-    <strong>Автор</strong>
-    <small>12.09.2023</small>
-  </div>
+    <div class="info">
+      <strong>Чете: {{audiobook.narrator}}</strong>
+      <small>{{audiobook.date | date: "dd.MM.yyyy"}}</small>
+    </div>
 
-  <div>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A consequuntur cupiditate delectus, illo nam numquam sequi sit voluptas? Animi dicta eius eos exercitationem hic minima mollitia obcaecati possimus quaerat qui quidem, rerum ut voluptatem? Asperiores blanditiis est ipsam, iste perferendis porro soluta. Architecto esse eum excepturi fuga id neque ullam.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A consequuntur cupiditate delectus, illo nam numquam sequi sit voluptas? Animi dicta eius eos exercitationem hic minima mollitia obcaecati possimus quaerat qui quidem, rerum ut voluptatem? Asperiores blanditiis est ipsam, iste perferendis porro soluta. Architecto esse eum excepturi fuga id neque ullam.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A consequuntur cupiditate delectus, illo nam numquam sequi sit voluptas? Animi dicta eius eos exercitationem hic minima mollitia obcaecati possimus quaerat qui quidem, rerum ut voluptatem? Asperiores blanditiis est ipsam, iste perferendis porro soluta. Architecto esse eum excepturi fuga id neque ullam.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A consequuntur cupiditate delectus, illo nam numquam sequi sit voluptas? Animi dicta eius eos exercitationem hic minima mollitia obcaecati possimus quaerat qui quidem, rerum ut voluptatem? Asperiores blanditiis est ipsam, iste perferendis porro soluta. Architecto esse eum excepturi fuga id neque ullam.</p>
+    {{audiobook.text}}
+
   </div>
 </div>
-
+<ng-template #loading>
+  <p class="text-center" >Зареждане...</p>
+</ng-template>

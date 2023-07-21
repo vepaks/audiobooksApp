@@ -1,6 +1,12 @@
-<div class="posts">
-    <app-audiobook></app-audiobook>
-    <app-audiobook></app-audiobook>
-    <app-audiobook></app-audiobook>
-    <app-audiobook></app-audiobook>
+<div
+  *ngIf="audiobook$ | async as audiobooks; else loading"
+  class="posts">
+    <app-audiobook
+      *ngFor="let audiobook of audiobooks"
+      [audiobook]="audiobook"
+    ></app-audiobook>
 </div>
+
+<ng-template #loading>
+  <p class="text-center">Зареждане...</p>
+</ng-template>

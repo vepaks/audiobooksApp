@@ -1,18 +1,15 @@
 <div class="card">
   <div class="card-header">
-    <h2>Post title</h2>
+    <h2>{{audiobook.title}}</h2>
 
-    <small>12.09.2023</small>
+    <small>{{audiobook.date | date: "dd.MM.yyyy"}}</small>
   </div>
-  <img src="https://covers.audiobooks.com/images/covers/full/9780739319307.jpg" alt="pic">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias aut consequatur culpa nihil quis sequi ut. Eius, illum, laborum!</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias aut consequatur culpa nihil quis sequi ut. Eius, illum, laborum!</p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium alias aut consequatur culpa nihil quis sequi ut. Eius, illum, laborum!</p>
+
   <div>
-    <small>Aleksandar</small>
+    <small>{{audiobook.narrator}}</small>
   </div>
   <button
-    [routerLink]="['/audiobook', 12312]"
+    [routerLink]="['/audiobook', audiobook.id]"
     class="btn btn-primary"
   >Още</button>
 </div>
