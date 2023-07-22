@@ -29,6 +29,8 @@ export class LoginPageComponent implements OnInit {
         this.message = 'Моля, въведете данните си';
       } else if (params['authFailed']) {
         this.message = "Сесията изтече. Въведете данни отново."
+      } else if (params['emailExists']) {
+        this.message = "Този email вече съществува. Моля, въведете данните му."
       }
     });
 

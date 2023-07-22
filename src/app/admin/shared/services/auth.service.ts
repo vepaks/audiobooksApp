@@ -23,12 +23,12 @@ export class AuthService {
     return localStorage.getItem('fb-token');
   }
 
-  // register(user: User): Observable<any> {
-  //   return this.http.post(
-  //     `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.apiKey}`,
-  //     user
-  //   );
-  // }
+  register(user: User): Observable<any> {
+    return this.http.post(
+      `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${environment.apiKey}`,
+      user
+    );
+  }
 
   login(user: User): Observable<any> {
     user.returnSecureToken = true;
@@ -67,6 +67,10 @@ export class AuthService {
 
     return throwError(error);
   }
+
+
+
+
   private setToken(response: FbAuthResponse | null) {
     if (response) {
       const expDate = new Date(

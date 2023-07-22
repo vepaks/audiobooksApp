@@ -1,11 +1,16 @@
+<div class="parent">
 <div
   *ngIf="audiobook$ | async as audiobooks; else loading"
-  class="posts">
+  class="posts child">
     <app-audiobook
       *ngFor="let audiobook of audiobooks"
       [audiobook]="audiobook"
     ></app-audiobook>
 </div>
+
+
+</div>
+
 
 <ng-template #loading>
   <p class="text-center">Зареждане...</p>
