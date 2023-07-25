@@ -3,6 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { MainLayoutComponent } from './shared/components/main-layout/main-layout.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AudiobookPageComponent } from './audiobook-page/audiobook-page.component';
+import {NotFoundComponent} from "./shared/components/not-found/not-found.component";
 
 const routes: Routes = [
   {
@@ -26,7 +27,9 @@ const routes: Routes = [
         (loadModule) => loadModule.AdminModule
       );
     },
-  },
+  },{
+  path: '**', component: NotFoundComponent
+  }
 ];
 @NgModule({
   imports: [

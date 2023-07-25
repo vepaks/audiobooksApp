@@ -5,8 +5,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { NgIf } from '@angular/common';
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 // import {QuillModule} from "ngx-quill";
-
 
 @NgModule({
   imports: [
@@ -24,6 +24,6 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
     AngularEditorModule,
     // QuillModule,
   ],
-  declarations: [HeaderComponent, FooterComponent],
+  declarations: [HeaderComponent, FooterComponent, NotFoundComponent],
 })
 export class SharedModule {}

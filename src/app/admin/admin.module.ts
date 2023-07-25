@@ -15,6 +15,7 @@ import {AuthGuard} from "./shared/services/auth.guard";
 import {TableModule} from "primeng/table";
 import {ButtonModule} from "primeng/button";
 import {SearchPipe} from "./shared/pipes/search.pipe";
+import {EditorModule} from "primeng/editor";
 // import {ButtonModule} from "primeng/button";
 // import { EditorModule } from 'primeng/editor';
 
@@ -27,7 +28,7 @@ import {SearchPipe} from "./shared/pipes/search.pipe";
     AddAudiobookComponent,
     EditPageComponent,
     RegisterPageComponent,
-    SearchPipe
+    SearchPipe,
   ],
   imports: [
     CommonModule,
@@ -70,6 +71,7 @@ import {SearchPipe} from "./shared/pipes/search.pipe";
     ]),
     TableModule,
     ButtonModule,
+    EditorModule,
   ],
   exports: [RouterModule, AddAudiobookComponent],
   providers: [AuthGuard],

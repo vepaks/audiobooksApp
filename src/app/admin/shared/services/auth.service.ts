@@ -68,9 +68,6 @@ export class AuthService {
     return throwError(error);
   }
 
-
-
-
   private setToken(response: FbAuthResponse | null) {
     if (response) {
       const expDate = new Date(
