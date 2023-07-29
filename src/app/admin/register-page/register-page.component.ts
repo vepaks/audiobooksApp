@@ -92,9 +92,13 @@ export class RegisterPageComponent implements OnInit {
         })
       )
       .subscribe((params: Params) => {
-        this.router.navigate(['admin', 'login'], {
-          queryParams: { emailExists: true },
-        });
+        if (params['emailExists']) {
+          this.router.navigate(['admin', 'login'], {
+            queryParams: {emailExists: true},
+          });
+        } else {
+          this.router.navigate(['admin']);
+        }
       });
-  }
+      }
 }
