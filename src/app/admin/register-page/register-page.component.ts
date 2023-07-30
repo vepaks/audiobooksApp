@@ -8,7 +8,6 @@ import {
 } from '@angular/forms';
 import { AuthService } from '../shared/services/auth.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { catchError } from 'rxjs/operators';
 
 // Функцията, която ще валидира дали паролите съвпадат
 function passwordValidator(control: AbstractControl): ValidationErrors | null {
@@ -32,6 +31,7 @@ export class RegisterPageComponent implements OnInit {
   form: FormGroup | any;
   submitted: boolean = false;
   message: string = '';
+  emailExists: boolean = false;
 
   constructor(
     public auth: AuthService,
@@ -40,11 +40,13 @@ export class RegisterPageComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+
     this.route.queryParams.subscribe((params: Params) => {
       //  Ако в URL адреса има параметър emailExists: true
       if (params['emailExists']) {
-        // съзадваме съобщение за потребителя
+        // създаваме съобщение за потребителя
         this.message = 'Този email вече е зает. Моля, въведете друг.';
+        this.emailExists = true; // Задаваме стойност на emailExists
       }
     });
 
@@ -80,25 +82,16 @@ export class RegisterPageComponent implements OnInit {
 
     this.auth
       .register(user)
-      .pipe(
-        catchError((error) => {
-          if (error.error.error.message === 'EMAIL_EXISTS') {
-            return this.router.navigate(['admin', 'register'], {
-              queryParams: { emailExists: true },
-            });
-          } else {
-            return error
-          }
-        })
-      )
-      .subscribe((params: Params) => {
-        if (params['emailExists']) {
-          this.router.navigate(['admin', 'login'], {
-            queryParams: {emailExists: true},
-          });
-        } else {
+      .subscribe(
+        () => {
           this.router.navigate(['admin']);
+        },
+        (error) => {
+          if (error.error?.error?.message === 'EMAIL_EXISTS') {
+            this.emailExists = true;
+            this.message = 'Този email вече е зает. Моля, въведете друг.';
+          }
         }
-      });
+      );
       }
 }
