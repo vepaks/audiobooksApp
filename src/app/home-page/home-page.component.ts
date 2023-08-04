@@ -15,7 +15,11 @@ export class HomePageComponent implements OnInit {
     private audiobookService: AudiobooksService,
   ) {}
 
-  ngOnInit() {
-    this.audiobook$ = this.audiobookService.getAll();
-  }
+/**
+ * Initializes the component.
+ */
+ngOnInit() {
+  // Fetches all audiobooks from the service
+  this.audiobook$ = this.audiobookService.getAll();
+}
 }
