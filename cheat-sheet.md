@@ -97,3 +97,4 @@ error Handler: https://stackoverflow.com/questions/60278490/using-catcherror-ins
 44. Add logic for Home page
 45. Add logic for audiobook page
 46. Аdd logic for register page
+47. Deploy

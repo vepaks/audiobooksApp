@@ -6,7 +6,6 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { NgIf } from '@angular/common';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { NotFoundComponent } from './components/not-found/not-found.component';
-// import {QuillModule} from "ngx-quill";
 
 @NgModule({
   imports: [
@@ -15,14 +14,12 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     NgIf,
     RouterLinkActive,
     AngularEditorModule,
-    // QuillModule.forRoot(),
   ],
   exports: [
     HttpClientModule,
     HeaderComponent,
     FooterComponent,
     AngularEditorModule,
-    // QuillModule,
   ],
   declarations: [HeaderComponent, FooterComponent, NotFoundComponent],
 })
