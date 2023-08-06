@@ -16,9 +16,6 @@ import {TableModule} from "primeng/table";
 import {ButtonModule} from "primeng/button";
 import {SearchPipe} from "./shared/pipes/search.pipe";
 import {EditorModule} from "primeng/editor";
-// import {ButtonModule} from "primeng/button";
-// import { EditorModule } from 'primeng/editor';
-
 
 @NgModule({
   declarations: [
@@ -35,8 +32,6 @@ import {EditorModule} from "primeng/editor";
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    // ButtonModule,
-    // EditorModule,
     RouterModule.forChild([
       {
         path: '',
